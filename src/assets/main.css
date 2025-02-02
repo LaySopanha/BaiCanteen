@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .line-container {
+    position: relative;
+    height: 2px;
+    background-color: white;
+  }
+  
+  .line-container::before {
+    content: '';
+    position: absolute;
+    top: 10;
+    left: 30%;
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    transform: rotate(110deg);
+  } */
