@@ -1,6 +1,6 @@
 <script setup>
 import Hero from '@/components/Hero.vue';
-
+import Footer from '@/components/Footer.vue';
 
 </script>
 
@@ -9,7 +9,7 @@ import Hero from '@/components/Hero.vue';
   <!-- Hero Section to show the opening page -->
   <Hero bgColor="bg-white">
     <template #left>
-      <div class="text-center sm:text-left sm:w-1/2">
+      <div class="text-center sm:text-left">
         <h1 class="text-4xl font-extrabold text-black sm:text-5xl md:text-6xl">
           Dissatisfied With Your <span class="text-secondary-100">CANTEEN</span> Food?
         </h1>
@@ -27,7 +27,18 @@ import Hero from '@/components/Hero.vue';
     </template>
     <template #right>
       <div class="mt-8 sm:mt-0 sm:w-full flex justify-center">
-        <img src="@/assets/img/LogoGreen.png" alt="Canteen" class="w-full sm:w-4/5 lg:w-3/4 h-auto rounded-lg mx-auto" />
+        <!-- <img src="@/assets/img/LogoGreen.png" alt="Canteen" class="w-full sm:w-4/5 lg:w-3/4 h-auto rounded-lg mx-auto" /> -->
+        <video
+      class="w-full sm:w-11/12 lg:w-5/6 h-auto rounded-lg mx-auto"
+      autoplay
+      loop
+      muted
+      playsinline
+    >
+      <source src="@/assets/video/BaiCanteenAnimation.mp4" type="video/mp4" />
+      <!-- A fallback message for browsers that do not support <video> -->
+      Your browser does not support the video tag.
+    </video>
       </div>
     </template>
   </Hero>
@@ -51,16 +62,16 @@ import Hero from '@/components/Hero.vue';
             Why បាយ-Canteen?
             </h1>
             <svg
-            class="h-auto"
-            width="400px"
+            class="w-full h-auto"
+            width="800"
             height="auto"
-            viewBox="0 0 400 5"
+            viewBox="0 0 800 20"
             xmlns="http://www.w3.org/2000/svg"
             >
 
                 <!-- Horizontal line #1 -->
                 <path
-                    d="M0 5 H290"
+                    d="M0 15 H230"
                     stroke="#FFFFFF"
                     stroke-width="2"
                     fill="none"
@@ -68,16 +79,16 @@ import Hero from '@/components/Hero.vue';
 
                 <!-- Diagonal line (thinner) -->
                 <path
-                    d="M290 5 L305 0"
+                    d="M230 15 L245 0"
                     stroke="#FFFFFF"
-                    stroke-width="1.5"   
+                    stroke-width="1.8"   
                     fill="none"
                 />
                 <!-- Horizontal line #2 -->
                 <path
-                    d="M305 0 H400"
+                    d="M245 0 H800"
                     stroke="#FFFFFF"
-                    stroke-width="2"
+                    stroke-width="3"
                     fill="none"
                 />
         </svg>
@@ -122,4 +133,5 @@ import Hero from '@/components/Hero.vue';
       </div>
     </template>
   </Hero>
+  <Footer />
 </template>

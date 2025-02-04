@@ -3,6 +3,8 @@ import HomeView from '@/views/HomeView.vue';
 import MenuListingView from '@/views/MenuListView.vue';
 import MealView from '@/views/MealView.vue';
 import AboutMeView from '@/views/AboutMeView.vue';
+import LiveVoteView from '@/views/LiveVoteView.vue';
+import SettingView from '@/views/SettingView.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +28,16 @@ const router = createRouter({
             path: '/about',
             name: 'about',
             component: AboutMeView
+        },
+        {
+            path: '/liveVote',
+            name: 'liveVote',
+            component: LiveVoteView
+        },
+        {
+            path: '/setting',
+            name: 'setting',
+            component: SettingView
         }
     ]
 });
