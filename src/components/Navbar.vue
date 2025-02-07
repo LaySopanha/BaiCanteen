@@ -1,10 +1,23 @@
 <script setup>
-import { RouterLink, useRoute } from 'vue-router';
+import { ref, computed } from 'vue';
+import { useAuthStore } from '@/stores/authentication';
+import { RouterLink, useRoute, useRouter } from 'vue-router';
 import logo from '@/assets/img/WhiteLogo.png'
+
+
+const router = useRouter();
+const route = useRoute();
+const auth = useAuthStore();
+
+const isAuthenticated = computed(() => auth.isAuthenticated);
 
 const isActiveLink = (routePath) => {
   const route = useRoute();
   return route.path === routePath;
+}
+const logout = () =>{
+  auth.clearAuth();
+  router.push('/');
 }
 </script>
 
@@ -38,30 +51,6 @@ const isActiveLink = (routePath) => {
                   >Home
                 </RouterLink>
                 <RouterLink
-                  to="/menu"
-                  :class="[
-                    isActiveLink('/menu') 
-                    ?'bg-green-900'
-                    :'hover:bg-green-900 hover:text-white',
-                    'text-white', 'px-3',
-                    'py-2',
-                    'rounded-md'
-                    ]"
-                  >Menu
-                </RouterLink>
-                                <RouterLink
-                  to="/meal"
-                  :class="[
-                    isActiveLink('/meal') 
-                    ?'bg-green-900'
-                    :'hover:bg-green-900 hover:text-white',
-                    'text-white', 'px-3',
-                    'py-2',
-                    'rounded-md'
-                    ]"
-                  >Meal
-                </RouterLink>
-                <RouterLink
                   to="/about"
                   :class="[
                     isActiveLink('/about') 
@@ -73,6 +62,49 @@ const isActiveLink = (routePath) => {
                     ]"
                   >About
                 </RouterLink>
+                <RouterLink
+                  to="/featuresService"
+                  :class="[
+                    isActiveLink('/featuresService') 
+                    ?'bg-green-900'
+                    :'hover:bg-green-900 hover:text-white',
+                    'text-white', 'px-3',
+                    'py-2',
+                    'rounded-md'
+                    ]"
+                  >Features and Service
+                </RouterLink>
+                <RouterLink
+                  to="/pricing"
+                  :class="[
+                    isActiveLink('/pricing') 
+                    ?'bg-green-900'
+                    :'hover:bg-green-900 hover:text-white',
+                    'text-white', 'px-3',
+                    'py-2',
+                    'rounded-md'
+                    ]"
+                  >Pricing
+                </RouterLink>
+                <!-- Public links -->
+                <RouterLink 
+                  v-if="!isAuthenticated" 
+                  to="/auth"
+                  :class="[
+                      isActiveLink('/auth') 
+                          ? 'bg-green-900'
+                          : 'hover:bg-green-900 hover:text-white',
+                      'text-white px-3 py-2 rounded-md'
+                  ]"
+              >
+                  Login
+              </RouterLink>
+                <button
+                  @click="logout"
+                  class="text-white px-3 py-2 rounded-md hover:bg-green-900"
+                  >
+                  Logout
+                </button>
               </div>
             </div>
           </div>

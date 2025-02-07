@@ -9,3 +9,4 @@ import { RouterView } from 'vue-router';
   <Navbar />
   <RouterView/>
 </template>
+

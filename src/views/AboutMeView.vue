@@ -76,7 +76,7 @@ import Footer from '@/components/Footer.vue';
             alt="Team Member 1"
             class="w-24 h-24 rounded-full mx-auto mb-4"
           />
-          <h3 class="text-xl font-semibold">Hou nestar</h3>
+          <h3 class="text-xl font-semibold">Hou Nestar</h3>
           <p class="text-green-700">CEO</p>
         </div>
         <!-- Another Team Member Card -->
@@ -86,7 +86,7 @@ import Footer from '@/components/Footer.vue';
             alt="Team Member 2"
             class="w-24 h-24 rounded-full mx-auto mb-4"
           />
-          <h3 class="text-xl font-semibold">Narith Sopheakleab</h3>
+          <h3 class="text-xl font-semibold">Narith Sopheak leap</h3>
           <p class="text-green-700">Co-Founder</p>
         </div>
         <!-- Third Team Member Card -->
