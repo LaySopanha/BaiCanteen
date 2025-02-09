@@ -1,14 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useAuthStore } from '@/stores/authentication';
 import HomeView from '@/views/HomeView.vue';
-import MenuListingView from '@/views/MenuListView.vue';
-import MealView from '@/views/MealView.vue';
 import AboutMeView from '@/views/AboutMeView.vue';
-import LiveVoteView from '@/views/LiveVoteView.vue';
-import SettingView from '@/views/SettingView.vue';
 import AuthenticationView from '@/views/authentication/AuthenticationView.vue';
 import FeaturesServiceView from '@/views/FeaturesServiceView.vue';
 import PricingView from '@/views/PricingView.vue';
+
+//student
+import StudentLayout from '@/layouts/StudentPortalLayout.vue';
+import StudentMenuView from '@/views/portals/student/MenuView.vue';
+import StudentVoteView from '@/views/portals/student/VoteView.vue';
+import StudentResultView from '@/views/portals/student/ResultsView.vue';
+
+//vendor
+import VendorLayout from '@/layouts/VendorPortalLayout.vue';
+import VendorDashboardView from '@/views/portals/vendor/DashboardView.vue';
+import VendorMenuManagement from '@/views/portals/vendor/MenuManagementView.vue';
+import VendorAnalytics from '@/views/portals/vendor/AnalyticsView.vue';
+import VendorOrderView from '@/views/portals/vendor/OrdersView.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,61 +43,91 @@ const router = createRouter({
             name: 'pricing',
             component: PricingView
         },
-        // Authentication routes
         {
-            path: '/auth',
-            name: 'auth',
-            component: AuthenticationView,
-            meta: { requiresGuest: true } // Only accessible when not logged in
+          path: '/auth',
+          name: 'auth',
+          component: AuthenticationView,
+          meta: { requiresGuest: true }
         },
-        // Protected routes (require authentication)
-        {
-            path: '/menu',
-            name: 'menu',
-            component: MenuListingView,
-            meta: { requiresAuth: true }
-        },
-        {
-            path: '/meal',
-            name: 'meal',
-            component: MealView,
-            meta: { requiresAuth: true }
-        },
-        {
-            path: '/liveVote',
-            name: 'liveVote',
-            component: LiveVoteView,
-            meta: { requiresAuth: true }
-        },
-        {
-            path: '/setting',
-            name: 'setting',
-            component: SettingView,
-            meta: { requiresAuth: true }
-        }
+  // Student Routes
+  {
+    path: '/student',
+    component: StudentLayout,
+    meta: { requiresAuth: true, role: 'student' },
+    children: [
+      {
+        path: '',
+        redirect: '/student/menu'
+      },
+      {
+        path: 'menu',
+        name: 'studentMenu',
+        component: StudentMenuView
+      },
+      {
+        path: 'vote',
+        name: 'studentVote',
+        component: StudentVoteView
+      },
+      {
+        path: 'results',
+        name: 'studentResults',
+        component:StudentResultView
+      }
     ]
+  },
+
+  // Vendor Routes
+  {
+    path: '/vendor',
+    component: VendorLayout,
+    meta: { requiresAuth: true, role: 'vendor' },
+    children: [
+      {
+        path: '',
+        redirect: '/vendor/dashboard'
+      },
+      {
+        path: 'dashboard',
+        name: 'vendorDashboard',
+        component:VendorDashboardView
+      },
+      {
+        path: 'menu-management',
+        name: 'vendorMenu',
+        component:VendorMenuManagement
+      },
+      {
+        path: 'analytics',
+        name: 'vendorAnalytics',
+        component:VendorAnalytics
+      },
+      {
+        path: 'orders',
+        name: 'vendorOrders',
+        component:VendorOrderView
+      }
+    ]
+  }
+]
 });
 
-// Navigation guard
+//router guard
+
 router.beforeEach((to, from, next) => {
-    const auth = useAuthStore();
-    
-    // Check if route requires authentication
-    if (to.meta.requiresAuth && !auth.isAuthenticated) {
-        // Redirect to auth page with return URL
-        next({ 
-            path: '/auth', 
-            query: { redirect: to.fullPath } 
-        });
-    }
-    // Check if route requires guest (non-authenticated) access
-    else if (to.meta.requiresGuest && auth.isAuthenticated) {
-        // Redirect to home or previous intended destination
-        next(to.query.redirect || '/');
-    }
-    else {
-        next();
-    }
+  const auth = useAuthStore();
+  const isAuthenticated = auth.isAuthenticated;
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const isAuthPage = to.path === '/auth';
+
+  if (requiresAuth && !isAuthenticated) {
+    next('/auth');
+  } else if (isAuthPage && isAuthenticated) {
+    // Redirect to appropriate dashboard based on role
+    next(auth.userRole === 'vendor' ? '/vendor/dashboard' : '/student/menu');
+  } else {
+    next();
+  }
 });
 
 export default router;
