@@ -1,0 +1,192 @@
+[
+    {
+        "id": 1,
+        "image": "Fish_Amok.jpg",
+        "title": "Fish Amok",
+        "category": "Main Dish",
+        "price": 8000,
+        "description": "A traditional Cambodian dish of fish cooked in a coconut curry and wrapped in banana leaves.",
+        "rating": 4.7,
+        "availability": true
+    },
+    {
+        "id": 2,
+        "image": "Beef_Lok_Lak.jpg",
+        "title": "Beef Lok Lak",
+        "category": "Main Dish",
+        "price": 9000,
+        "description": "Stir-fried beef served with lettuce, tomato, cucumber, and a tangy lime-pepper sauce.",
+        "rating": 4.6,
+        "availability": true
+    },
+    {
+        "id": 3,
+        "image": "Kuy_Teav.jpg",
+        "title": "Kuy Teav",
+        "category": "Noodle Soup",
+        "price": 8000,
+        "description": "A flavorful noodle soup with pork or beef, fresh herbs, and a savory broth.",
+        "rating": 4.5,
+        "availability": true
+    },
+    {
+        "id": 4,
+        "image": "Nom_Banh_Chok.jpg",
+        "title": "Nom Banh Chok",
+        "category": "Noodle Dish",
+        "price": 5000,
+        "description": "Rice noodles topped with a light fish curry sauce and fresh vegetables.",
+        "rating": 4.7,
+        "availability": true
+    },
+    {
+        "id": 5,
+        "image": "Prohok_Ktis.png",
+        "title": "Prahok Ktiss",
+        "category": "Dip & Side Dish",
+        "price": 8000,
+        "description": "A savory dip made from fermented fish paste, minced pork, and coconut milk, served with fresh vegetables.",
+        "rating": 4.4,
+        "availability": false
+    },
+    {
+        "id": 6,
+        "image": "Somlor_koko.jpg",
+        "title": "Samlor Korko",
+        "category": "Soup",
+        "price": 7000,
+        "description": "A thick, hearty soup made with mixed vegetables, fish, and Cambodian kroeung spices.",
+        "rating": 4.6,
+        "availability": true
+    },
+    {
+        "id": 7,
+        "image": "Somlor_Machu_Kroeung.jpg",
+        "title": "Samlor Machu Kroeung",
+        "category": "Soup",
+        "price": 8000,
+        "description": "A sour and spicy soup with beef, water spinach, and Cambodian herbs.",
+        "rating": 4.5,
+        "availability": true
+    },
+    {
+        "id": 8,
+        "image": "Bai_Sach_Chrouk.png",
+        "title": "Bai Sach Chrouk",
+        "category": "Breakfast Dish",
+        "price": 7000,
+        "description": "Grilled pork marinated in coconut milk, served over rice with pickled vegetables.",
+        "rating": 4.8,
+        "availability": true
+    },
+    {
+        "id": 9,
+        "image": "Cha_Kdav.jpg",
+        "title": "Cha Kdav",
+        "category": "Stir-Fry",
+        "price": 8000,
+        "description": "A spicy stir-fry with frog legs, lemongrass, chili, and Cambodian spices.",
+        "rating": 4.3,
+        "availability": false
+    },
+    {
+        "id": 10,
+        "image": "Num_Ansom_Chek.jpg",
+        "title": "Num Ansom Chek",
+        "category": "Dessert",
+        "price": 4000,
+        "description": "A sticky rice cake filled with banana and wrapped in banana leaves.",
+        "rating": 4.6,
+        "availability": false
+    },
+    {
+        "id": 11,
+        "image": "Nom_Krok.jpg",
+        "title": "Nom Krok",
+        "category": "Street Snack",
+        "price": 5000,
+        "description": "Mini coconut rice cakes with a crispy outer layer and soft, sweet inside.",
+        "rating": 4.7,
+        "availability": false
+    },
+    {
+        "id": 12,
+        "image": "Nom_Ka_Chai.jpg",
+        "title": "Nom Ka Chai",
+        "category": "Street Snack",
+        "price": 3000,
+        "description": "Savory fried chive cakes served with a sweet-spicy sauce.",
+        "rating": 4.5,
+        "availability": false
+    },
+    {
+        "id": 13,
+        "image": "Nom_Bobor.jpg",
+        "title": "Bobor Dessert",
+        "category": "Dessert",
+        "price": 3000,
+        "description": "A sweet rice porridge dessert made with coconut milk and mung beans.",
+        "rating": 4.3,
+        "availability": false
+    },
+    {
+        "id": 14,
+        "image": "Nom_Pang.jpg",
+        "title": "Nom Pang",
+        "category": "Sandwich",
+        "price": 4000,
+        "description": "A Cambodian-style baguette sandwich filled with grilled meat, pickled vegetables, and fresh herbs.",
+        "rating": 4.6,
+        "availability": true
+    },
+    {
+        "id": 15,
+        "image": "Twa_Ko.jpeg",
+        "title": "Twa Ko",
+        "category": "Grilled Dish",
+        "price": 8000,
+        "description": "Cambodian-style grilled sausage made from pork and spices.",
+        "rating": 4.5,
+        "availability": true
+    },
+    {
+        "id": 16,
+        "image": "Tek_Ampel.webp",
+        "title": "Teuk Ampil",
+        "category": "Beverage",
+        "price": 5000,
+        "description": "A refreshing sour tamarind juice with a hint of sugar and salt.",
+        "rating": 4.8,
+        "availability": true
+    },
+    {
+        "id": 17,
+        "image": "Tek_Tnot.jpg",
+        "title": "Teuk Tnaot",
+        "category": "Beverage",
+        "price": 4000,
+        "description": "Fresh palm juice straight from Cambodia’s sugar palm trees.",
+        "rating": 4.7,
+        "availability": false
+    },
+    {
+        "id": 18,
+        "image": "Tek_Mpov.webp",
+        "title": "Teuk Mpov",
+        "category": "Beverage",
+        "price": 3000,
+        "description": "Sweet sugarcane juice served cold with ice.",
+        "rating": 4.9,
+        "availability": false
+    },
+    {
+        "id": 19,
+        "image": "Ice_Coffee.jpg",
+        "title": "Cambodian Iced Coffee",
+        "category": "Beverage",
+        "price": 5000,
+        "description": "Strong coffee brewed with condensed milk and served over ice.",
+        "rating": 4.7,
+        "availability": true
+    }
+]
